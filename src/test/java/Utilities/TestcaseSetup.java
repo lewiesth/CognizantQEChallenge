@@ -7,14 +7,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
-
-import java.io.IOException;
 
 public class TestcaseSetup {
     public static WebDriver driver;
     @BeforeEach
-    public void setup() throws IOException {
+    public void setup() {
         String dir = System.getProperty("user.dir");
 //        Depending on runtime variable, launches different browser for cross browser testing
         switch(System.getProperty("browser")) {
@@ -23,10 +20,8 @@ public class TestcaseSetup {
                 driver = new ChromeDriver();
                 break;
             case "firefox":
-                FirefoxOptions options = new FirefoxOptions();
-                options.setBinary("C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");
                 System.setProperty("webdriver.gecko.driver", dir+"\\src\\test\\resources\\webdrivers\\geckodriver.exe");
-                driver = new FirefoxDriver(options);
+                driver = new FirefoxDriver();
                 break;
             case "msedge":
                 System.setProperty("webdriver.edge.driver", dir+"\\src\\test\\resources\\webdrivers\\msedgedriver.exe");
@@ -43,6 +38,6 @@ public class TestcaseSetup {
 
     @AfterEach
     public void teardown() {
-        System.out.println("In teardown");
+        driver.close();
     }
 }

@@ -32,9 +32,6 @@ public class FunctionalTests extends TestcaseSetup {
         CommonTestSteps.addTodo(todo);
         List<WebElement> todoAsList=CommonTestSteps.getTodoList();
 
-        String dir = System.getProperty("user.dir");
-        System.out.println("current dir = " + dir);
-
         assertEquals(todo,todoAsList.getFirst().findElement(By.xpath("div/label[@data-testid='todo-item-label']")).getText(),"Actual todo task do not match!");
     }
     @Test
@@ -62,7 +59,7 @@ public class FunctionalTests extends TestcaseSetup {
     @Description("Test to edit task in todo application")
     @Epic("Epic-001")
     @Feature("Core feature")
-    public void TC003_editTaskTest() throws InterruptedException, IOException {
+    public void TC003_editTaskTest() throws IOException {
         String edittedMessage=" EdittedAddonTodo";
         List<String> todoToAddList=CommonTestSteps.getAllValuesFromExcel();
         for(String valueToAdd:todoToAddList)
@@ -176,8 +173,3 @@ public class FunctionalTests extends TestcaseSetup {
         assertEquals("0 items left!",driver.findElement(By.xpath("//span[@class='todo-count']")).getText(),"There are still tasks left in counter!");
     }
 }
-
-//TODO
-// Write a test plan/document
-// Add readme
-// Push to git
