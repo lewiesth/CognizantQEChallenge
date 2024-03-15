@@ -70,7 +70,7 @@ For this project, I have used the following versions
 | msedgedriver | 122.0.2365.80 |
 
 # Overview
-Overall, we have identified 8 testcases from our exploratory testing and have automated them. In addition, we have enabled cross-browser testing at the command line level to ensure that the application works across various browser platforms. Below, you will find snapshots of the results for each browser execution for all test cases.
+Overall, we have identified 8 testcases from our exploratory testing and have automated them. In addition, we have enabled cross-browser testing at the command line level to ensure that the application works across various browser platforms. Below, you will find snapshots of the results for each browser execution for all test cases. To view the report in full, after downloading the project, go to the allure-report folder found in the base directory and open the index.html file in any browser. You will then be able to navigate through the report.
 
 ### Chrome
 ![image](https://github.com/lewiesth/CognizantQEChallenge/assets/44538479/6a12298e-4ac5-4509-b414-98fbff2cf808)
